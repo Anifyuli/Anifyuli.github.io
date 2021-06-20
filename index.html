@@ -1,66 +1,157 @@
 <!DOCTYPE html>
-<html lang="in">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- I'm using Bootstrap 4.5.3 for stylesheet and my own CSS -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="./assets/extras/bootstrap4/css/bootstrap.css">
-  <link rel="stylesheet" href="./assets/extras/bootstrap4/css/bootstrap.css.map">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
-  <title>About Me</title>
-</head>
-<body>
-  
-  <!-- Navbar in here -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+</style>
+<body class="w3-black">
 
-      <a class="navbar-brand" href="#home">Tentang Saya</a>
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>Beranda</p>
+  </a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>Tentang</p>
+  </a>
+  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-picture-o w3-xxlarge"></i>
+    <p>Foto</p>
+  </a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-phone w3-xxlarge"></i>
+    <p>Kontak</p>
+  </a>
+</nav>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-hover-opacity-off w3-center w3-large">
+    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">Beranda</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">Tentang</a>
+    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">Foto</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">Kontak</a>
+  </div>
+</div>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">Saya</span> Moh Anif Yuliansyah</h1>
+    <p>Programmer Masa Depan</p>
+    <img src="./assets/img/anif.jpg" alt="boy" class="w3-image" width="992" height="1108">
+  </header>
 
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Ikhtisar <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Tentang</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"></a>
-          </li>
-        </ul>
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey">Tentang Saya</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>
+      Saya adalah putra dari seorang bapak yang berprofesi buruh tani dan ibu seorang penjahit rumahan. Saya putra terakhir dari tiga bersaudara. Saya belajar pemrograman sejak kelas X MA.
+    </p>
+    <h3 class="w3-padding-16 w3-text-light-grey">Kemampuan</h3>
+    <p class="w3-wide">Front-end</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:75%"></div>
+    </div>
+    <p class="w3-wide">Back-end</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:65%"></div>
+    </div>
+    <p class="w3-wide">Photoshop</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:80%"></div>
+    </div><br>
+    
+    <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">11+</span><br>
+        Partners
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">55+</span><br>
+        Projects Done
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">89+</span><br>
+        Happy Clients
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">150+</span><br>
+        Meetings
+      </div>
+    </div>
+
+    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <i class="fa fa-download"></i> Download Resume
+    </button>
+    
+
+  <!-- Portfolio Section -->
+  <div class="w3-padding-64 w3-content" id="photos">
+    <h2 class="w3-text-light-grey">My Photos</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <!-- Grid for photos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <img src="/w3images/wedding.jpg" style="width:100%">
+        <img src="/w3images/rocks.jpg" style="width:100%">
+        <img src="/w3images/sailboat.jpg" style="width:100%">
       </div>
 
-    </nav>
-  <!-- End of navbar -->
-  <div class="row">
-    <div class="col-6">
-      <h3>Halo! <br>
-        Saya Moh Anif Yuliansyah
-      </h3>
-      <h5>Calon <i>programmer</i> masa depan</h5>
+      <div class="w3-half">
+        <img src="/w3images/underwater.jpg" style="width:100%">
+        <img src="/w3images/chef.jpg" style="width:100%">
+        <img src="/w3images/wedding.jpg" style="width:100%">
+        <img src="/w3images/p6.jpg" style="width:100%">
+      </div>
+    <!-- End photo grid -->
     </div>
-    <div class="col-6">
-      <img src="./assets/img/profile.jpg" class="img-fluid" alt="Profile">
-    </div>
+  <!-- End Portfolio Section -->
   </div>
+
+  <!-- Contact Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Kontak Hubung</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Pati, Jawa Tengah, Indonesia</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Telepon: +6288806025022</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: anifyuliansyah@gmail.com / anifyuli007@outlook.co.id</p>
+    </div><br>
   
- 
-  <!-- JavaScript, JQuery, Popper, and bootstrap.min.js -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-  <script src="./assets/js/script.js"></script>
-  <script src="./assets/extras/bootstrap4/js/bootstrap.bundle.js"></script>
-  <script src="./assets/extras/bootstrap4/js/bootstrap.bundle.js.map"></script>
+    <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <p class="w3-text-light-grey">Sosial media</p>
+    <hr style="width:200px" class="w3-opacity">
+    <a class="fa fa-facebook-official w3-xxxlarge" href="https://fb.com/anifyuli007" target="_blank" rel="noopener noreferrer"></a>
+    <a class="fa fa-instagram w3-xxxlarge" href="https://instagram.com/anifyuli007" target="_blank" rel="noopener noreferrer"></a>
+    <a class="fa fa-whatsapp w3-xxxlarge" href="https://wa.me/088806025022" target="_blank" rel="noopener noreferrer"></a>
+    <a class="fa fa-telegram w3-xxxlarge" href="https://t.me/anif007" target="_blank" rel="noopener noreferrer"></a>
+    <a class="fa fa-twitter-square w3-xxxlarge" href="https://twitter.com/anifyuli007" target="_blank" rel="noopener noreferrer"></a>
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+
 </body>
 </html>
