@@ -1,7 +1,3 @@
-# Anifyuli.github.io
-<b >Hello everybody! </b> <br>
-Let me introduce myself. <br> I'm Moh Anif Yuliansyah. You can call me Anif. <br>
-This is my Github account. In this repo, I record my progress and my work in here. <br>
-For detailed info, you can visit my Github Pages in <a href="https://anifyuli.github.io">here</a>. <br>
-<br>
-Let's make a progress together!
+# Anifyuli Blogs Source Codes
+This repo contain my blog and portfolio. If you want visit this blog, open this [here] (https://anifyuli.github.io)
+If you want to ask anything, you can contact me in [Telegram] (t.me/anif007)
