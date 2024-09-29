@@ -4,7 +4,7 @@ import Navbar from './components/Navbar.vue';
 
 <template>
   <Navbar></Navbar>
-  <h1>Work in progress</h1>
+  <h1 style="text-align: center;">Work in progress</h1>
 </template>
 
 <style scoped></style>
