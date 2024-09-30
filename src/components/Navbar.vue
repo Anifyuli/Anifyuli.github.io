@@ -1,5 +1,5 @@
 <script setup>
-
+import ThemeToggle from './ThemeToggle.vue'
 </script>
 
 <template>
@@ -9,6 +9,7 @@
     </div>
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
+        <li><ThemeToggle></ThemeToggle></li>
         <li><a href="">Projects</a></li>
         <li><a href="">Connect</a></li>
       </ul>
