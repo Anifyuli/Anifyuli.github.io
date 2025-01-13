@@ -1,11 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+    <link
+      rel="icon"
+      id="favicon"
+      type="image/svg+xml"
+      href="/svg/favicon-l.svg"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to my porto</title>
   </head>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const userTheme = localStorage.getItem("theme");
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+        .matches
+        ? "dark"
+        : "light";
+      const currentTheme = userTheme || systemTheme;
+
+      // Update favicon
+      const favicon = document.getElementById("favicon");
+      if (favicon) {
+        const href =
+          currentTheme === "dark" ? "/svg/favicon-d.svg" : "/svg/favicon-l.svg";
+        favicon.setAttribute("href", `${href}?cache-bust=${Date.now()}`);
+        console.log("Updated favicon to:", href);
+      }
+
+      // Update theme attribute on <html>
+      document.documentElement.setAttribute("data-theme", currentTheme);
+      console.log("Current theme:", currentTheme);
+
+      // Optional: Listen for system theme changes
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (e) => {
+          const newTheme = e.matches ? "dark" : "light";
+          if (favicon) {
+            const href =
+              newTheme === "dark" ? "/svg/favicon-d.svg" : "/svg/favicon-l.svg";
+            favicon.setAttribute("href", `${href}?cache-bust=${Date.now()}`);
+            console.log("Updated favicon to:", href);
+          }
+          document.documentElement.setAttribute("data-theme", newTheme);
+          console.log("Theme changed to:", newTheme);
+        });
+    });
+  </script>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
