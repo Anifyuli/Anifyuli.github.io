@@ -1,10 +1,13 @@
-import { Navbar } from "./components/Navbar";
+import { About } from "@/components/About";
+import { Hero } from "@/components/Hero";
+import { Navbar } from "@/components/Navbar";
 
 function App() {
   return (
     <div className="pt-2 px-2">
       <Navbar />
-      <h1 className="text-center">Work in progress</h1>
+      <Hero />
+      <About />
     </div>
   );
 }
