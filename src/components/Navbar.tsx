@@ -4,7 +4,7 @@ export function Navbar() {
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
-        <a className="btn btn-ghost"><img src="../src/assets/svg/Anifyuli.svg" alt="" /></a>
+        <a className="btn btn-ghost"><img src="/src/assets/svg/Anifyuli.svg" alt="" /></a>
       </div>
       <div className="flex-none px-5">
         <ThemeSwitcher />
