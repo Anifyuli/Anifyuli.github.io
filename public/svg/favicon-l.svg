@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="none" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path id="path_1" d="M48 0L48 0L48 48L0 48L0 0L48 0Z" />
+    <rect id="rect_2" x="0" y="0" width="48" height="48" />
+    <clipPath id="clip_path_3">
+      <use xlink:href="#rect_2" />
+    </clipPath>
+  </defs>
+  <g id="Favicon" opacity="1" clip-path="url(#clip_path_3)">
+    <g>
+      <use xlink:href="#path_1" style="mix-blend-mode:normal;" />
+      <g>
+        <path id="primary" d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" style="fill:#EBDBB1;fill-rule:evenodd;stroke-width:2;stroke:#282828;stroke-linecap:round;stroke-linejoin:round;mix-blend-mode:normal;" transform="translate(12 6)" />
+        <path id="primary-2" d="M6.92 0.0200329C2.80645 1.35172 0.0146503 5.17632 0 9.50003C0 9.50003 0 11.5 0 11.5C0 11.5 4 15.5 16 15.5C28 15.5 32 11.5 32 11.5C32 11.5 32 9.50003 32 9.50003C31.98 5.14188 29.14 1.29862 24.9799 0" style="fill:#EBDBB1;stroke-width:2;stroke:#282828;stroke-linecap:round;stroke-linejoin:round;mix-blend-mode:normal;" transform="translate(8 26.5)" />
+      </g>
+    </g>
+  </g>
+</svg>
