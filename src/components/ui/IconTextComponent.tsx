@@ -10,7 +10,7 @@ export function IconTextComponent({ icon, text }: IconTextComponentProps) {
         {icon}
       </div>
       <div className="mx-1">
-        <p className="text-base font-bold">{text}</p>
+        <p className="font-bold text-sm sm:text-base">{text}</p>
       </div>
     </div>
   );
