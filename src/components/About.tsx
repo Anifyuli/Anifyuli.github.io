@@ -3,7 +3,7 @@ export function About() {
     <>
       <div id="about" className="my-12 mx-8 md:mx-24">
         <h2 className="text-3xl font-bold text-center mb-6">About Me</h2>
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="w-full mx-auto text-center">
           <p className="text-xl text-left my-2 sm:leading-normal leading-loose">
             "Hi! I am a Computer Science student with a strong passion for
             programming, Linux system administration, and DevOps. I believe in

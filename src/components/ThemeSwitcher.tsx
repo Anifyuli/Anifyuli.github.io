@@ -2,17 +2,23 @@ import { Moon, Sun } from "lucide-react";
 import { useState, useEffect, ChangeEvent } from "react";
 
 export function ThemeSwitcher() {
-  // Use localStorage for checking initial theme or set fallback theme
-  const [theme, setTheme] = useState<string>(
-    () => localStorage.getItem("theme") || "light"
-  );
+  // Initialize theme from localStorage or system preference
+  const [theme, setTheme] = useState<string>(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) return storedTheme;
+    const systemPrefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    return systemPrefersDark ? "dark" : "light";
+  });
 
-  // Handle theme toggling changes
+  // Toggle theme between dark and light
   const handleToggle = (e: ChangeEvent<HTMLInputElement>) => {
-    setTheme(e.target.checked ? "dark" : "light");
+    const newTheme = e.target.checked ? "dark" : "light";
+    setTheme(newTheme);
   };
 
-  // Synchronize theme with saved localStorage value
+  // Save theme to localStorage and apply to HTML element
   useEffect(() => {
     localStorage.setItem("theme", theme);
     document.documentElement.setAttribute("data-theme", theme);
@@ -26,6 +32,8 @@ export function ThemeSwitcher() {
             type="checkbox"
             onChange={handleToggle}
             checked={theme === "dark"}
+            data-toggle-theme="dark,light"
+            data-act-class="ACTIVECLASS"
             aria-label="Toggle Theme"
           />
           <Sun className="w-5 h-5 swap-on" />

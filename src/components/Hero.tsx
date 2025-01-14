@@ -4,6 +4,7 @@ import {
   SiLinux,
   SiOpensourceinitiative,
 } from "@icons-pack/react-simple-icons";
+import Avatar from "@/assets/img/ava.jpg";
 import { IconTextComponent } from "@/components/ui/IconTextComponent";
 
 export function Hero() {
@@ -27,7 +28,7 @@ export function Hero() {
 
   const items = [
     { icon: <Code />, text: "Self taught programmer" },
-    { icon: <SiLinux />, text: "Linux as daily driver" },
+    { icon: <SiLinux />, text: "Linux wizard" },
     { icon: <SiOpensourceinitiative />, text: "FLOSS enthusiast" },
   ];
 
@@ -50,7 +51,7 @@ export function Hero() {
         <div className="hero-content flex-col lg:flex-row items-center">
           <div className="flex justify-center w-full lg:w-auto">
             <img
-              src="/src/assets/img/avatar.jpg"
+              src={Avatar}
               className="max-w-sm rounded-full shadow-2xl mt-4"
             />
           </div>
