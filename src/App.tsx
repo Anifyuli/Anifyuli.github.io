@@ -1,10 +1,17 @@
-import { Navbar } from "./components/Navbar";
+import { About } from "@/components/About";
+import { Hero } from "@/components/Hero";
+import { Navbar } from "@/components/Navbar";
+import { Skill } from "@/components/Skill";
+import { Footer } from "@/components/Footer";
 
 function App() {
   return (
-    <div className="pt-2 px-2">
+    <div className="pt-2 max-w-full">
       <Navbar />
-      <h1 className="text-center">Work in progress</h1>
+      <Hero />
+      <About />
+      <Skill />
+      <Footer />
     </div>
   );
 }
