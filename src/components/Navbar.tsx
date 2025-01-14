@@ -14,7 +14,7 @@ export function Navbar() {
               <summary>Skills</summary>
               <ul className="bg-base-100 rounded-t-none p-2">
                 <li>
-                  <a>Expertise</a>
+                  <a href="#expertise">Expertise</a>
                 </li>
                 <li>
                   <a>Projects</a>
