@@ -1,10 +1,11 @@
 import {
-  SiReact,
+  SiDaisyui,
   SiExpo,
   SiJavascript,
-  SiTypescript,
-  SiDaisyui,
+  SiReact,
   SiTailwindcss,
+  SiTypescript,
+  SiVite,
 } from "@icons-pack/react-simple-icons";
 import { TechLogo } from "./ui/TechLogo";
 
@@ -15,24 +16,12 @@ export function Expertise() {
   ];
 
   const techItems = [
+    { icon: SiDaisyui, tooltip: "daisyUI" },
+    { icon: SiExpo, tooltip: "Expo" },
     { icon: SiReact, tooltip: "React" },
-    {
-      icon: SiReact,
-      color: "#E7E1D6",
-      tooltip: "React Native",
-    },
-    {
-      icon: SiExpo,
-      tooltip: "Expo",
-    },
-    {
-      icon: SiDaisyui,
-      tooltip: "daisyUI",
-    },
-    {
-      icon: SiTailwindcss,
-      tooltip: "TailwindCSS",
-    },
+    { icon: SiReact, color: "#E7E1D6", tooltip: "React Native" },
+    { icon: SiTailwindcss, tooltip: "TailwindCSS" },
+    { icon: SiVite, tooltip: "Vite" },
   ];
 
   return (

@@ -2,7 +2,7 @@ import { ThemeSwitcher } from "./ThemeSwitcher";
 
 export function Navbar() {
   return (
-    <div className="navbar bg-base-100 fixed z-10">
+    <div className="navbar bg-base-100 bg-opacity-60 fixed z-10 px-4 py-2 rounded-lg">
       <div className="flex-1">
         <a className="btn btn-ghost" href="/"><img src="/svg/Anifyuli.svg" alt="" /></a>
       </div>
