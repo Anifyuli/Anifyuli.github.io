@@ -4,6 +4,7 @@ import {
   SiLinux,
   SiOpensourceinitiative,
 } from "@icons-pack/react-simple-icons";
+import { Mail } from "lucide-react";
 import Avatar from "@/assets/img/ava.jpg";
 import { IconTextComponent } from "@/components/ui/IconTextComponent";
 
@@ -69,8 +70,8 @@ export function Hero() {
               ))}
             </div>
             <div className="flex justify-center w-full">
-              <a className="btn btn-primary" href="#about" onClick={handleNext}>
-                Next ↓
+              <a className="btn btn-primary" href="" onClick={handleNext}>
+                <Mail /> Mail Me
               </a>
             </div>
           </div>
