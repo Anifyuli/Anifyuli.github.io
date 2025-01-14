@@ -1,32 +1,71 @@
+import { Menu } from "lucide-react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 
 export function Navbar() {
   return (
-    <div className="navbar bg-base-100 bg-opacity-60 fixed z-10 px-4 py-2 rounded-lg">
-      <div className="flex-1">
-        <a className="btn btn-ghost" href="/"><img src="/svg/Anifyuli.svg" alt="" /></a>
+    <nav className="navbar bg-base-100 bg-opacity-60 fixed z-10 w-full py-2 shadow-lg">
+      <div className="navbar-start flex items-center">
+        {/* Dropdown for mobile */}
+        <div className="dropdown lg:hidden">
+          <button
+            tabIndex={0}
+            className="btn btn-ghost"
+            aria-label="Toggle menu"
+          >
+            <Menu />
+          </button>
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+          >
+            <li>
+              <a href="#expertise">Expertise</a>
+            </li>
+            <li>
+              <a href="#projects">Projects</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Logo */}
+        <a className="btn btn-ghost normal-case" href="/">
+          <img
+            src="/svg/Anifyuli.svg"
+            alt="Logo"
+            className="h-8 w-auto"
+          />
+        </a>
       </div>
-      <div className="flex-none px-5">
-        <ThemeSwitcher />
-        <ul className="menu menu-horizontal px-1">
+
+      {/* Navbar center for larger screens */}
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal w-full">
           <li>
             <details>
               <summary>Skills</summary>
-              <ul className="bg-base-100 rounded-t-none p-2">
+              <ul className="bg-base-100 rounded-t-none w-full">
                 <li>
                   <a href="#expertise">Expertise</a>
                 </li>
                 <li>
-                  <a>Projects</a>
+                  <a href="#projects">Projects</a>
                 </li>
               </ul>
             </details>
           </li>
           <li>
-            <a href="">Contact</a>
+            <a href="#contact">Contact</a>
           </li>
         </ul>
       </div>
-    </div>
+
+      {/* Navbar end */}
+      <div className="navbar-end">
+        <ThemeSwitcher />
+      </div>
+    </nav>
   );
 }

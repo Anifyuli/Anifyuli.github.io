@@ -4,6 +4,7 @@ import {
   SiLinux,
   SiOpensourceinitiative,
 } from "@icons-pack/react-simple-icons";
+import { Mail } from "lucide-react";
 import Avatar from "@/assets/img/ava.jpg";
 import { IconTextComponent } from "@/components/ui/IconTextComponent";
 
@@ -47,19 +48,20 @@ export function Hero() {
         scrolled ? "opacity-40 scroll-up-custom" : "opacity-100 translate-y-0"
       }`}
     >
-      <div className="hero min-h-full">
-        <div className="hero-content flex-col lg:flex-row items-center">
+      <div className="hero min-h-screen w-full">
+        <div className="hero-content flex-col lg:flex-row items-center max-w-5xl w-full mx-auto">
           <div className="flex justify-center w-full lg:w-auto">
             <img
               src={Avatar}
-              className="max-w-sm rounded-full shadow-2xl mt-4"
+              alt="Avatar"
+              className="min-w-sm sm:w-full md:w-48 lg:w-9/12 rounded-full shadow-2xl mt-4"
             />
           </div>
-          <div className="px-4 flex flex-col items-start justify-between h-full">
-            <h1 className="text-left md:mx-auto md:text-center text-5xl font-bold">
+          <div className="px-4 flex flex-col items-center lg:items-start justify-between w-full">
+            <h1 className="text-center lg:text-left text-4xl sm:text-5xl font-bold">
               Moh. Anif Yuliansyah
             </h1>
-            <div className="flex flex-col flex-wrap my-4 items-start text-left">
+            <div className="flex flex-col flex-wrap my-4 items-start">
               {items.map((item, index) => (
                 <IconTextComponent
                   key={index}
@@ -69,8 +71,12 @@ export function Hero() {
               ))}
             </div>
             <div className="flex justify-center w-full">
-              <a className="btn btn-primary" href="#about" onClick={handleNext}>
-                Next ↓
+              <a
+                className="btn btn-primary flex items-center gap-2"
+                href=""
+                onClick={handleNext}
+              >
+                <Mail /> Mail Me
               </a>
             </div>
           </div>

@@ -32,7 +32,7 @@ export function Expertise() {
             Programming Language
           </h2>
         </div>
-        <div className="flex flex-row flex-wrap justify-center px-24">
+        <div className="flex flex-row flex-wrap justify-center px-24 py-3 gap-4">
           {languageItems.map((languageItem, index) => (
             <TechLogo
               key={index}
@@ -47,7 +47,7 @@ export function Expertise() {
           Frameworks & Tech Stacks
         </h2>
       </div>
-      <div className="flex flex-row flex-wrap justify-center px-24">
+      <div className="flex flex-row flex-wrap justify-center px-24 py-3 gap-4">
         {techItems.map((techItem, index) => (
           <TechLogo
             key={index}
