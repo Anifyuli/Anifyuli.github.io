@@ -19,13 +19,13 @@ export function Navbar() {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a href="#expertise">Expertise</a>
+              <a className="text-lg" href="#expertise">Expertise</a>
             </li>
             <li>
-              <a href="#projects">Projects</a>
+              <a className="text-lg" href="#projects">Projects</a>
             </li>
             <li>
-              <a href="#contact">Contact</a>
+              <a className="text-lg" href="#contact">Contact</a>
             </li>
           </ul>
         </div>
