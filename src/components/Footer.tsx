@@ -1,5 +1,6 @@
 import {
   SiDaisyui,
+  SiGithub,
   SiReact,
   SiTailwindcss,
   SiVite,
@@ -47,6 +48,18 @@ export function Footer() {
           </p>
           <p className="text-center text-primary flex flex-wrap items-center justify-center mt-4">
             &copy; {new Date().getFullYear()}
+          </p>
+          <p className="text-center mt-2">
+            Source code in{" "}
+            <span>
+              <a
+                href="https://github.com/Anifyuli/Anifyuli.github.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SiGithub className="inline w-4 h-4 mx-0 text-primary" />
+              </a>
+            </span>
           </p>
         </div>
       </footer>
