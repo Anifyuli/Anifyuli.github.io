@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 
 function App() {
   return (
-    <div className="pt-2 w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden overflow-y-visible">
       <Navbar />
       <Hero />
       <About />

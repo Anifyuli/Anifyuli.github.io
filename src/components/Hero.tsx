@@ -4,7 +4,6 @@ import {
   SiLinux,
   SiOpensourceinitiative,
 } from "@icons-pack/react-simple-icons";
-import { Mail } from "lucide-react";
 import Avatar from "@/assets/img/ava.jpg";
 import { IconTextComponent } from "@/components/ui/IconTextComponent";
 
@@ -54,7 +53,7 @@ export function Hero() {
             <img
               src={Avatar}
               alt="Avatar"
-              className="min-w-sm sm:w-full md:w-48 lg:w-9/12 rounded-full shadow-2xl mt-4"
+              className="sm:w-full md:w-3/4 lg:w-9/12 rounded-full shadow-2xl my-4"
             />
           </div>
           <div className="px-4 flex flex-col items-center lg:items-start justify-between w-full">
@@ -73,10 +72,10 @@ export function Hero() {
             <div className="flex justify-center w-full">
               <a
                 className="btn btn-primary flex items-center gap-2"
-                href=""
+                href="#about"
                 onClick={handleNext}
               >
-                <Mail /> Mail Me
+                Next
               </a>
             </div>
           </div>

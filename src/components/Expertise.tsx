@@ -26,7 +26,7 @@ export function Expertise() {
 
   return (
     <>
-      <div id="expertise">
+      <div>
         <div className="my-3">
           <h2 className="text-2xl font-bold text-center mb-6">
             Programming Language

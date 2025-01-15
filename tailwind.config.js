@@ -4,7 +4,11 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "selector",
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        sm: "320px",
+      },
+    },
   },
   daisyui: {
     themes: [
