@@ -49,7 +49,7 @@ export function Footer() {
           <p className="text-center text-primary flex flex-wrap items-center justify-center mt-4">
             &copy; {new Date().getFullYear()}
           </p>
-          <p className="text-center mt-2">
+          <p className="text-center text-primary mt-2">
             Source code in{" "}
             <span>
               <a
