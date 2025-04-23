@@ -1,9 +1,9 @@
 import { useCallback } from "react";
 import { Code } from "lucide-react";
 import {
+  SiGithub,
   SiLinux,
   SiOpensourceinitiative,
-  SiTelegram,
 } from "@icons-pack/react-simple-icons";
 import Avatar from "@/assets/img/ava.jpg";
 import MyCv from "/docs/my-cv.pdf";
@@ -70,10 +70,10 @@ export function Hero() {
               </a>
               <a
                 className="btn btn-primary flex items-center gap-2"
-                href="https://t.me/tuxBro"
+                href="https://github.com/Anifyuli"
                 target="blank"
               >
-                Text me on <SiTelegram />
+                View on <SiGithub />
               </a>
             </div>
           </div>

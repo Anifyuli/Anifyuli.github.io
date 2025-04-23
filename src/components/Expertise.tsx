@@ -2,6 +2,7 @@ import {
   SiDaisyui,
   SiExpo,
   SiJavascript,
+  SiNestjs,
   SiReact,
   SiTailwindcss,
   SiTypescript,
@@ -18,6 +19,7 @@ export function Expertise() {
   const techItems = [
     { icon: SiDaisyui, tooltip: "daisyUI" },
     { icon: SiExpo, tooltip: "Expo" },
+    { icon: SiNestjs, tooltip: "NestJS" },
     { icon: SiReact, tooltip: "React" },
     { icon: SiReact, color: "#E7E1D6", tooltip: "React Native" },
     { icon: SiTailwindcss, tooltip: "TailwindCSS" },

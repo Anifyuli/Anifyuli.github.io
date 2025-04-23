@@ -82,7 +82,7 @@ export function Navbar() {
 
         {/* Logo */}
         <a className="btn btn-ghost normal-case" href="/">
-          <img src="/svg/Anifyuli.svg" alt="Logo" className="h-8 w-auto" />
+          <img src="/svg/Anifyuli.svg" alt="Logo" className="h-8 w-auto px-1" />
         </a>
       </div>
 
