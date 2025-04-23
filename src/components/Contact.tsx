@@ -4,6 +4,7 @@ import {
   SiGitlab,
   SiFacebook,
   SiThreads,
+  SiInstagram,
 } from "@icons-pack/react-simple-icons";
 
 export function Contact() {
@@ -25,6 +26,12 @@ export function Contact() {
       username: "Anif Yuliansyah",
       tooltip: "Facebook",
       link: "https://www.facebook.com/anif.yuliansyah.007/",
+    },
+    {
+      Icon: SiInstagram,
+      username: "anifyuliansyah",
+      tooltip: "Instagram",
+      link: "https://www.instagram.com/anifyuliansyah/",
     },
     {
       Icon: SiThreads,

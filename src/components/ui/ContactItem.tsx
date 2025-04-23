@@ -18,7 +18,7 @@ export function ContactItem({
           className="flex items-center justify-center mx-3 px-2 tooltip tooltip-bottom"
           data-tip={tooltip}
         >
-          <Icon className="w-14 h-14 p-2 mx-2 rounded-full" />{" "}
+          <Icon className="w-16 h-16 p-2 mx-2 rounded-sm" />{" "}
           <p className="text-base hover:font-bold">{username}</p>
         </div>
       </a>

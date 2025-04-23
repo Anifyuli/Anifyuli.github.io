@@ -5,6 +5,7 @@ import {
   SiTailwindcss,
   SiVite,
 } from "@icons-pack/react-simple-icons";
+import { Heart } from "lucide-react";
 
 export function Footer() {
   return (
@@ -12,14 +13,14 @@ export function Footer() {
       <footer className="footer items-center p-8 bg-neutral-700 text-base-content w-screen">
         <div className="mx-auto flex flex-col items-center">
           <p className="text-center text-primary flex flex-wrap items-center justify-center gap-2">
-            Built with ❤️ using
+            Built with <Heart fill="#CC241C" strokeWidth={0} className="inline"/> using
             <a
               href="http://react.dev"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center"
             >
-              <SiReact className="inline w-6 h-6 mx-0 text-primary  " />
+              <SiReact className="inline mx-0 text-primary  " />
             </a>
             <a
               href="http://vite.dev"
@@ -27,7 +28,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="flex items-center"
             >
-              <SiVite className="inline w-6 h-6 mx-0 text-primary" />
+              <SiVite className="inline mx-0 text-primary" />
             </a>
             <a
               href="https://daisyui.com/"
@@ -35,7 +36,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="flex items-center"
             >
-              <SiDaisyui className="inline w-6 h-6 mx-0 text-primary" />
+              <SiDaisyui className="inline mx-0 text-primary" />
             </a>
             <a
               href="https://tailwindcss.com/"
@@ -43,7 +44,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="flex items-center"
             >
-              <SiTailwindcss className="inline w-6 h-6 mx-0 text-primary" />
+              <SiTailwindcss className="inline mx-0 text-primary" />
             </a>
           </p>
           <p className="text-center text-primary flex flex-wrap items-center justify-center mt-4">
@@ -57,7 +58,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <SiGithub className="inline w-4 h-4 mx-0 text-primary" />
+                <SiGithub className="inline mx-0 text-primary" />
               </a>
             </span>
           </p>

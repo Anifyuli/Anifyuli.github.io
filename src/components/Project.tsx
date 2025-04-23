@@ -9,6 +9,10 @@ import {
   SiKotlin,
   SiPhp,
   SiMariadb,
+  SiNestjs,
+  SiTypescript,
+  SiPostgresql,
+  SiJson,
 } from "@icons-pack/react-simple-icons";
 import { ProjectCard } from "./ui/ProjectCard";
 
@@ -34,7 +38,7 @@ export function Project() {
       projectDetail: (
         <>
           Simple ToDo list app using <SiExpo className="inline w-4 h-4 mx-1" />{" "}
-          and JSON as saved data format
+          and <SiJson className="inline w-4 h-4 mx-1" /> as saved data format
         </>
       ),
       projectLink: "https://github.com/Anifyuli/simple-todo-list",
@@ -77,11 +81,25 @@ export function Project() {
           <SiMariadb className="inline w-4 h-4 mx-1" /> as database
         </>
       ),
+      projectLink: "https://github.com/Anifyuli/SimpleToDoList",
+    },
+    {
+      Icon: SiNestjs,
+      projectName: "Eunomia",
+      projectDetail: (
+        <>
+          Task management RESTful API using{" "}
+          <SiTypescript className="inline w-4 h-4 mx-1" /> as language,{" "}
+          <SiNestjs className="inline w-4 h-4 mx-1" /> as backend, &{" "}
+          <SiPostgresql className="inline w-4 h-4 mx-1" /> as database manager
+        </>
+      ),
+      projectLink: "https://github.com/Anifyuli/eunomia",
     },
   ];
 
   return (
-    <div id="projects" className="my-3 scroll-mt-20">
+    <div id="projects" className="mt-12 mb-6 scroll-mt-20">
       <h2 className="text-2xl font-bold text-center mb-6">My Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
         {projectItem.map((item, index) => (
