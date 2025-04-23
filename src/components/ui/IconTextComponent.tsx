@@ -1,3 +1,5 @@
+import { TypewriterText } from "./TypewriterText";
+
 interface IconTextComponentProps {
   icon: React.ReactNode;
   text: string;
@@ -10,7 +12,7 @@ export function IconTextComponent({ icon, text }: IconTextComponentProps) {
         {icon}
       </div>
       <div className="mx-1">
-        <p className="font-bold text-sm sm:text-base">{text}</p>
+        <TypewriterText content={text} delay={40} className="font-bold text-sm sm:text-base" repeatCount={3}/>
       </div>
     </div>
   );

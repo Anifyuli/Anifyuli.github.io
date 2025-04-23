@@ -1,66 +1,57 @@
-import { useState, useEffect } from "react";
+import { useCallback } from "react";
 import { Code } from "lucide-react";
 import {
   SiLinux,
   SiOpensourceinitiative,
+  SiTelegram,
 } from "@icons-pack/react-simple-icons";
 import Avatar from "@/assets/img/ava.jpg";
+import MyCv from "/docs/my-cv.pdf";
+import { Download } from "lucide-react";
 import { IconTextComponent } from "@/components/ui/IconTextComponent";
 
 export function Hero() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   const items = [
     { icon: <Code />, text: "Self taught programmer" },
     { icon: <SiLinux />, text: "Linux wizard" },
     { icon: <SiOpensourceinitiative />, text: "FLOSS enthusiast" },
   ];
 
-  const handleNext = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    setScrolled(true);
-    const aboutSection = document.getElementById("about");
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  // Handling download button function
+  const downloadCvAction = useCallback(() => {
+    fetch(MyCv)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "Anifyuli CV.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+      })
+      .catch((error) => console.error("Error downloading CV:", error));
+  }, []);
 
   return (
-    <div
-      className={`my-10 transition-all duration-500 ease-in-out ${
-        scrolled ? "opacity-40 scroll-up-custom" : "opacity-100 translate-y-0"
-      }`}
-    >
+    <div className="my-16 lg:my-3">
       <div className="hero min-h-screen w-full">
-        <div className="hero-content flex-col lg:flex-row items-center max-w-5xl w-full mx-auto">
-          <div className="flex justify-center w-full lg:w-auto">
+        <div className="hero-content flex-col lg:flex-row items-center justify-between max-w-6xl w-full mx-auto gap-8">
+          <div className="w-full lg:w-2/5 flex justify-center">
             <img
               src={Avatar}
               alt="Avatar"
-              className="sm:w-full md:w-3/4 lg:w-9/12 rounded-full shadow-2xl my-4"
+              className="w-3/4 sm:w-2/3 md:w-1/2 lg:w-full max-w-sm rounded-full shadow-2xl"
             />
           </div>
-          <div className="px-4 flex flex-col items-center lg:items-start justify-between w-full">
+
+          <div className="w-full lg:w-3/5 px-4 flex flex-col items-center lg:items-center justify-between space-y-6">
             <h1 className="text-center lg:text-left text-4xl sm:text-5xl font-bold">
               Moh. Anif Yuliansyah
             </h1>
-            <div className="flex flex-col flex-wrap my-4 items-start">
+
+            <div className="flex flex-col w-full space-y-3 my-2 lg:px-16">
               {items.map((item, index) => (
                 <IconTextComponent
                   key={index}
@@ -69,13 +60,20 @@ export function Hero() {
                 />
               ))}
             </div>
-            <div className="flex justify-center w-full">
+
+            <div className="flex justify-center lg:justify-center w-full pt-6 gap-3">
               <a
                 className="btn btn-primary flex items-center gap-2"
-                href="#about"
-                onClick={handleNext}
+                onClick={downloadCvAction}
               >
-                Next
+                <Download /> Download CV
+              </a>
+              <a
+                className="btn btn-primary flex items-center gap-2"
+                href="https://t.me/tuxBro"
+                target="blank"
+              >
+                Text me on <SiTelegram />
               </a>
             </div>
           </div>
