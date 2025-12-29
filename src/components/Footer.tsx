@@ -1,11 +1,12 @@
 import {
-    SiDaisyui,
-    SiGithub,
-    SiReact,
-    SiTailwindcss,
-    SiVite,
-} from '@icons-pack/react-simple-icons'
-import { Heart } from 'lucide-react'
+    siDaisyui,
+    siGithub,
+    siPreact,
+    siTailwindcss,
+    siVite,
+} from 'simple-icons'
+import { Heart } from 'lucide-preact'
+import { BrandIcon } from './ui/BrandIcon'
 
 export function Footer() {
     return (
@@ -21,12 +22,15 @@ export function Footer() {
                         />{' '}
                         using
                         <a
-                            href="http://react.dev"
+                            href="http://preactjs.com"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center"
                         >
-                            <SiReact className="mx-0 inline text-primary" />
+                            <BrandIcon
+                                icon={siPreact}
+                                className="mx-0 inline h-5 w-5 text-primary"
+                            />
                         </a>
                         <a
                             href="http://vite.dev"
@@ -34,7 +38,10 @@ export function Footer() {
                             rel="noopener noreferrer"
                             className="flex items-center"
                         >
-                            <SiVite className="mx-0 inline text-primary" />
+                            <BrandIcon
+                                icon={siVite}
+                                className="mx-0 inline h-5 w-5 text-primary"
+                            />
                         </a>
                         <a
                             href="https://daisyui.com/"
@@ -42,7 +49,10 @@ export function Footer() {
                             rel="noopener noreferrer"
                             className="flex items-center"
                         >
-                            <SiDaisyui className="mx-0 inline text-primary" />
+                            <BrandIcon
+                                icon={siDaisyui}
+                                className="mx-0 inline h-5 w-5 text-primary"
+                            />
                         </a>
                         <a
                             href="https://tailwindcss.com/"
@@ -50,7 +60,10 @@ export function Footer() {
                             rel="noopener noreferrer"
                             className="flex items-center"
                         >
-                            <SiTailwindcss className="mx-0 inline text-primary" />
+                            <BrandIcon
+                                icon={siTailwindcss}
+                                className="mx-0 inline h-5 w-5 text-primary"
+                            />
                         </a>
                     </p>
                     <p className="mt-4 flex flex-wrap items-center justify-center text-center text-primary">
@@ -64,7 +77,10 @@ export function Footer() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <SiGithub className="mx-0 inline text-primary" />
+                                <BrandIcon
+                                    icon={siGithub}
+                                    className="mx-0 inline h-6 w-6 text-primary"
+                                />
                             </a>
                         </span>
                     </p>

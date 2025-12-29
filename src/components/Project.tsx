@@ -1,101 +1,140 @@
 import {
-    SiVuedotjs,
-    SiExpress,
-    SiMongodb,
-    SiExpo,
-    SiDjango,
-    SiBootstrap,
-    SiFlutter,
-    SiKotlin,
-    SiPhp,
-    SiMariadb,
-    SiNestjs,
-    SiTypescript,
-    SiPostgresql,
-    SiJson,
-} from '@icons-pack/react-simple-icons'
+    siVuedotjs,
+    siExpress,
+    siMongodb,
+    siExpo,
+    siDjango,
+    siBootstrap,
+    siFlutter,
+    siKotlin,
+    siPhp,
+    siMariadb,
+    siNestjs,
+    siTypescript,
+    siPostgresql,
+    siJson,
+} from 'simple-icons'
 import { ProjectCard } from './ui/ProjectCard'
+import { BrandIcon } from './ui/BrandIcon'
 
 export function Project() {
     const projectItem = [
         {
-            Icon: SiVuedotjs,
+            icon: siVuedotjs,
             projectName: 'TuxSanctuary',
             projectDetail: (
                 <>
                     Simple blogging platform about Linux and FLOSS updates using
-                    <SiVuedotjs className="mx-1 inline h-4 w-4" />
-                    <SiExpress className="mx-1 inline h-4 w-4" />
+                    <BrandIcon
+                        icon={siVuedotjs}
+                        className="mx-1 inline h-4 w-4"
+                    />
+                    <BrandIcon
+                        icon={siExpress}
+                        className="mx-1 inline h-4 w-4"
+                    />
                     and
-                    <SiMongodb className="mx-1 inline h-4 w-4" />
+                    <BrandIcon
+                        icon={siMongodb}
+                        className="mx-1 inline h-4 w-4"
+                    />
                 </>
             ),
             projectLink: 'https://github.com/Anifyuli/tux_sanctuary',
         },
         {
-            Icon: SiExpo,
+            icon: siExpo,
             projectName: 'Simple To-Do List',
             projectDetail: (
                 <>
                     Simple ToDo list app using{' '}
-                    <SiExpo className="mx-1 inline h-4 w-4" /> and{' '}
-                    <SiJson className="mx-1 inline h-4 w-4" /> as saved data
-                    format
+                    <BrandIcon icon={siExpo} className="mx-1 inline h-4 w-4" />{' '}
+                    and{' '}
+                    <BrandIcon icon={siJson} className="mx-1 inline h-4 w-4" />{' '}
+                    as saved data format
                 </>
             ),
             projectLink: 'https://github.com/Anifyuli/simple-todo-list',
         },
         {
-            Icon: SiDjango,
+            icon: siDjango,
             projectName: 'Bakulan',
             projectDetail: (
                 <>
                     Simple e-commerce using
-                    <SiDjango className="mx-1 inline h-4 w-4" />
+                    <BrandIcon
+                        icon={siDjango}
+                        className="mx-1 inline h-4 w-4"
+                    />
                     as backend and
-                    <SiBootstrap className="mx-1 inline h-4 w-4" />
+                    <BrandIcon
+                        icon={siBootstrap}
+                        className="mx-1 inline h-4 w-4"
+                    />
                     for styling
                 </>
             ),
             projectLink: 'https://github.com/Anifyuli/bakulan',
         },
         {
-            Icon: SiFlutter,
+            icon: siFlutter,
             projectName: 'MyPati',
             projectDetail: (
                 <>
                     Simple app developed using{' '}
-                    <SiFlutter className="mx-1 inline h-4 w-4" /> for
-                    introducing Pati regency for Dicoding rookie Flutter course
-                    submission
+                    <BrandIcon
+                        icon={siFlutter}
+                        className="mx-1 inline h-4 w-4"
+                    />{' '}
+                    for introducing Pati regency for Dicoding rookie Flutter
+                    course submission
                 </>
             ),
             projectLink:
                 'https://github.com/Anifyuli/dicoding-submission-flutter-rookie',
         },
         {
-            Icon: SiKotlin,
+            icon: siKotlin,
             projectName: 'SimpleToDo List',
             projectDetail: (
                 <>
                     Older To-Do list project using{' '}
-                    <SiKotlin className="mx-1 inline h-4 w-4" /> as Android
-                    frontend with <SiPhp className="mx-1 inline h-4 w-4" /> as
-                    backend API with{' '}
-                    <SiMariadb className="mx-1 inline h-4 w-4" /> as database
+                    <BrandIcon
+                        icon={siKotlin}
+                        className="mx-1 inline h-4 w-4"
+                    />{' '}
+                    as Android frontend with{' '}
+                    <BrandIcon icon={siPhp} className="mx-1 inline h-4 w-4" />{' '}
+                    as backend API with{' '}
+                    <BrandIcon
+                        icon={siMariadb}
+                        className="mx-1 inline h-4 w-4"
+                    />{' '}
+                    as database
                 </>
             ),
             projectLink: 'https://github.com/Anifyuli/SimpleToDoList',
         },
         {
-            Icon: SiNestjs,
+            icon: siNestjs,
             projectName: 'Eunomia',
             projectDetail: (
                 <>
                     Task management RESTful API using{' '}
-                    <SiTypescript className="mx-1 inline h-4 w-4" /> as
-                    language, <SiNestjs className="mx-1 inline h-4 w-4" /> as
-                    backend, & <SiPostgresql className="mx-1 inline h-4 w-4" />{' '}
+                    <BrandIcon
+                        icon={siTypescript}
+                        className="mx-1 inline h-4 w-4"
+                    />{' '}
+                    as language,{' '}
+                    <BrandIcon
+                        icon={siNestjs}
+                        className="mx-1 inline h-4 w-4"
+                    />{' '}
+                    as backend, &{' '}
+                    <BrandIcon
+                        icon={siPostgresql}
+                        className="mx-1 inline h-4 w-4"
+                    />{' '}
                     as database manager
                 </>
             ),
@@ -110,7 +149,7 @@ export function Project() {
                 {projectItem.map((item, index) => (
                     <ProjectCard
                         key={index}
-                        Icon={item.Icon}
+                        icon={item.icon}
                         projectName={item.projectName}
                         projectDetail={item.projectDetail}
                         projectLink={item.projectLink}

@@ -1,26 +1,22 @@
 import { ContactItem } from '@/components/ui/ContactItem'
-import {
-    SiFacebook,
-    SiThreads,
-    SiInstagram,
-} from '@icons-pack/react-simple-icons'
+import { siFacebook, siThreads, siInstagram } from 'simple-icons'
 
 export function Contact() {
     const contactInfo = [
         {
-            Icon: SiFacebook,
+            Icon: siFacebook,
             username: 'Anif Yuliansyah',
             tooltip: 'Facebook',
             link: 'https://www.facebook.com/anif.yuliansyah.007/',
         },
         {
-            Icon: SiInstagram,
+            Icon: siInstagram,
             username: 'anifyuliansyah',
             tooltip: 'Instagram',
             link: 'https://www.instagram.com/anifyuliansyah/',
         },
         {
-            Icon: SiThreads,
+            Icon: siThreads,
             username: 'Anifyuliansyah',
             tooltip: 'Threads',
             link: 'https://www.threads.net/@anifyuliansyah',
@@ -37,7 +33,7 @@ export function Contact() {
                     {contactInfo.map((contact, index) => (
                         <ContactItem
                             key={index}
-                            Icon={contact.Icon}
+                            icon={contact.Icon}
                             username={contact.username}
                             tooltip={contact.tooltip}
                             link={contact.link}

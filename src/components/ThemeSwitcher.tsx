@@ -1,4 +1,4 @@
-import { Moon, Sun } from 'lucide-react'
+import { Moon, Sun } from 'lucide-preact'
 import { useState, useEffect, ChangeEvent } from 'react'
 
 export function ThemeSwitcher() {

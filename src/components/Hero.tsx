@@ -1,20 +1,25 @@
 import { useCallback } from 'react'
-import { Code } from 'lucide-react'
-import {
-    SiGithub,
-    SiLinux,
-    SiOpensourceinitiative,
-} from '@icons-pack/react-simple-icons'
+import { Code } from 'lucide-preact'
+import { siGithub, siLinux, siOpensourceinitiative } from 'simple-icons'
 import Avatar from '@/assets/img/ava.jpg'
 import MyCv from '/docs/my-cv.pdf'
-import { Download } from 'lucide-react'
+import { Download } from 'lucide-preact'
 import { IconTextComponent } from '@/components/ui/IconTextComponent'
+import { BrandIcon } from './ui/BrandIcon'
 
 export function Hero() {
     const items = [
         { icon: <Code />, text: 'Self taught programmer' },
-        { icon: <SiLinux />, text: 'Linux wizard' },
-        { icon: <SiOpensourceinitiative />, text: 'FLOSS enthusiast' },
+        {
+            icon: <BrandIcon icon={siLinux} className="h-6 w-6" />,
+            text: 'Linux wizard',
+        },
+        {
+            icon: (
+                <BrandIcon icon={siOpensourceinitiative} className="h-6 w-6" />
+            ),
+            text: 'FLOSS enthusiast',
+        },
     ]
 
     // Handling download button function
@@ -73,7 +78,11 @@ export function Hero() {
                                 href="https://github.com/Anifyuli"
                                 target="blank"
                             >
-                                View on <SiGithub />
+                                View on{' '}
+                                <BrandIcon
+                                    icon={siGithub}
+                                    className="h-6 w-6"
+                                />
                             </a>
                         </div>
                     </div>

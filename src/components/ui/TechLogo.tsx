@@ -1,16 +1,24 @@
+import { BrandIcon } from './BrandIcon'
+import type { SimpleIcon } from 'simple-icons'
+
 interface TechLogoProps {
-    Icon: React.ElementType
-    color?: string
+    icon: SimpleIcon
     tooltip: string
+    class?: string
+    color?: string
 }
 
-export function TechLogo({ Icon, color = 'default', tooltip }: TechLogoProps) {
+export function TechLogo({ icon, tooltip, class: cls, color }: TechLogoProps) {
     return (
         <div
-            className="tooltip tooltip-bottom mx-3 flex items-center justify-center px-2"
+            class="tooltip tooltip-bottom mx-3 flex items-center justify-center px-2"
             data-tip={tooltip}
         >
-            <Icon className="h-24 w-24 rounded-full p-2" color={color} />{' '}
+            <BrandIcon
+                icon={icon}
+                className={cls ?? 'h-24 w-24 rounded-full p-2'}
+                color={color}
+            />
         </div>
     )
 }

@@ -1,4 +1,5 @@
-import { useState, useEffect, ReactNode } from 'react'
+import { JSX, ReactNode } from 'preact/compat'
+import { useEffect, useState } from 'preact/hooks'
 
 // Tipe untuk item konten individual
 type ContentItem = {

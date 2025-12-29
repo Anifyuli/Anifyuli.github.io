@@ -1,12 +1,15 @@
+import { SimpleIcon } from 'simple-icons'
+import { BrandIcon } from './BrandIcon'
+
 interface ContactItemProps {
-    Icon: React.ElementType
+    icon: SimpleIcon
     username: string
     tooltip: string
     link: string
 }
 
 export function ContactItem({
-    Icon,
+    icon,
     username,
     tooltip,
     link,
@@ -18,7 +21,10 @@ export function ContactItem({
                     className="tooltip tooltip-bottom mx-3 flex items-center justify-center px-2"
                     data-tip={tooltip}
                 >
-                    <Icon className="mx-2 h-16 w-16 rounded-sm p-2" />{' '}
+                    <BrandIcon
+                        icon={icon}
+                        className="mx-2 h-16 w-16 rounded-sm p-2"
+                    />{' '}
                     <p className="text-base hover:font-bold">{username}</p>
                 </div>
             </a>

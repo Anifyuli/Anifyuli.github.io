@@ -1,12 +1,15 @@
+import { SimpleIcon } from 'simple-icons'
+import { BrandIcon } from './BrandIcon'
+
 interface ProjectCardProps {
-    Icon: React.ElementType
+    icon: SimpleIcon
     projectName: string
     projectDetail: React.ReactNode
     projectLink?: string
 }
 
 export function ProjectCard({
-    Icon,
+    icon,
     projectName,
     projectDetail,
     projectLink,
@@ -15,7 +18,7 @@ export function ProjectCard({
         <a href={projectLink} target="_blank" rel="noopener noreferrer">
             <div className="flex h-full max-w-xs flex-col rounded-lg p-4 shadow-md transition-shadow hover:shadow-lg">
                 <div className="mb-3 flex flex-row items-center space-x-4">
-                    <Icon className="h-12 w-12 rounded-sm" />
+                    <BrandIcon icon={icon} className="h-12 w-12 rounded-sm" />
                     <h4 className="text-xl font-medium">{projectName}</h4>
                 </div>
                 <div className="w-full flex-grow">

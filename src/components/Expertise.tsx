@@ -1,29 +1,29 @@
 import {
-    SiDaisyui,
-    SiExpo,
-    SiJavascript,
-    SiNestjs,
-    SiReact,
-    SiTailwindcss,
-    SiTypescript,
-    SiVite,
-} from '@icons-pack/react-simple-icons'
+    siDaisyui,
+    siExpo,
+    siJavascript,
+    siNestjs,
+    siReact,
+    siTailwindcss,
+    siTypescript,
+    siVite,
+} from 'simple-icons'
 import { TechLogo } from './ui/TechLogo'
 
 export function Expertise() {
     const languageItems = [
-        { icon: SiJavascript, tooltip: 'Javascript' },
-        { icon: SiTypescript, tooltip: 'Typescript' },
+        { icon: siJavascript, color: '#F7DF1E', tooltip: 'Javascript' },
+        { icon: siTypescript, color: '#3178C6', tooltip: 'Typescript' },
     ]
 
     const techItems = [
-        { icon: SiDaisyui, tooltip: 'daisyUI' },
-        { icon: SiExpo, tooltip: 'Expo' },
-        { icon: SiNestjs, tooltip: 'NestJS' },
-        { icon: SiReact, tooltip: 'React' },
-        { icon: SiReact, color: '#E7E1D6', tooltip: 'React Native' },
-        { icon: SiTailwindcss, tooltip: 'TailwindCSS' },
-        { icon: SiVite, tooltip: 'Vite' },
+        { icon: siDaisyui, color: '#1AD1A5', tooltip: 'daisyUI' },
+        { icon: siExpo, color: '#1C2024', tooltip: 'Expo' },
+        { icon: siNestjs, color: '#E0234E', tooltip: 'NestJS' },
+        { icon: siReact, color: '#61DAFB', tooltip: 'React' },
+        { icon: siReact, color: '#28292C', tooltip: 'React Native' },
+        { icon: siTailwindcss, color: '#06B6D4', tooltip: 'TailwindCSS' },
+        { icon: siVite, color: '#646CFF', tooltip: 'Vite' },
     ]
 
     return (
@@ -38,7 +38,8 @@ export function Expertise() {
                     {languageItems.map((languageItem, index) => (
                         <TechLogo
                             key={index}
-                            Icon={languageItem.icon}
+                            icon={languageItem.icon}
+                            color={languageItem.color}
                             tooltip={languageItem.tooltip}
                         />
                     ))}
@@ -53,7 +54,7 @@ export function Expertise() {
                 {techItems.map((techItem, index) => (
                     <TechLogo
                         key={index}
-                        Icon={techItem.icon}
+                        icon={techItem.icon}
                         color={techItem.color}
                         tooltip={techItem.tooltip}
                     />
