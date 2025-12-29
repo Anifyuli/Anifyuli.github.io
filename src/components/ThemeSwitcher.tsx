@@ -1,5 +1,6 @@
 import { Moon, Sun } from 'lucide-preact'
-import { useState, useEffect, ChangeEvent } from 'react'
+import { useState, useEffect } from 'preact/hooks'
+import { TargetedEvent } from 'preact'
 
 export function ThemeSwitcher() {
     // Initialize theme from localStorage or system preference
@@ -13,8 +14,8 @@ export function ThemeSwitcher() {
     })
 
     // Toggle theme between dark and light
-    const handleToggle = (e: ChangeEvent<HTMLInputElement>) => {
-        const newTheme = e.target.checked ? 'dark' : 'light'
+    const handleToggle = (e: TargetedEvent<HTMLInputElement>) => {
+        const newTheme = e.currentTarget.checked ? 'dark' : 'light'
         setTheme(newTheme)
     }
 
