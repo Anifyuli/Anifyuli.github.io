@@ -1,7 +1,8 @@
 import { TypewriterText } from './TypewriterText'
+import type { ReactNode } from 'preact/compat'
 
 interface IconTextComponentProps {
-    icon: React.ReactNode
+    icon: ReactNode
     text: string
 }
 

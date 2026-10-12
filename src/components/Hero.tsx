@@ -1,22 +1,17 @@
-import { useCallback } from 'react'
-import { Code } from 'lucide-preact'
-import { siGithub, siLinux, siOpensourceinitiative } from 'simple-icons'
+import { useCallback } from 'preact/hooks'
+import { Code, Download, Github, Sparkles, Terminal } from 'lucide-preact'
 import MyCv from '/docs/my-cv.pdf'
-import { Download } from 'lucide-preact'
 import { IconTextComponent } from '@/components/ui/IconTextComponent'
-import { BrandIcon } from './ui/BrandIcon'
 
 export function Hero() {
     const items = [
         { icon: <Code />, text: 'Self taught programmer' },
         {
-            icon: <BrandIcon icon={siLinux} className="h-6 w-6" />,
+            icon: <Terminal className="h-6 w-6" />,
             text: 'Linux wizard',
         },
         {
-            icon: (
-                <BrandIcon icon={siOpensourceinitiative} className="h-6 w-6" />
-            ),
+            icon: <Sparkles className="h-6 w-6" />,
             text: 'FLOSS enthusiast',
         },
     ]
@@ -45,11 +40,15 @@ export function Hero() {
                     <div className="flex w-full justify-center lg:w-2/5">
                         <img
                             src="/img/ava.webp"
+                            srcSet="/img/ava-384.webp 384w, /img/ava.webp 768w"
+                            sizes="(max-width: 640px) 75vw, 384px"
                             alt="Avatar"
                             width={768}
                             height={768}
                             fetchpriority="high"
-                            className="w-3/4 max-w-sm rounded-full shadow-2xl sm:w-2/3 md:w-1/2 lg:w-full"
+                            draggable={false}
+                            onContextMenu={(e) => e.preventDefault()}
+                            className="no-drag w-3/4 max-w-sm rounded-full shadow-2xl sm:w-2/3 md:w-1/2 lg:w-full"
                         />
                     </div>
 
@@ -82,11 +81,7 @@ export function Hero() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                View on{' '}
-                                <BrandIcon
-                                    icon={siGithub}
-                                    className="h-6 w-6"
-                                />
+                                View on <Github className="h-6 w-6" />
                             </a>
                         </div>
                     </div>

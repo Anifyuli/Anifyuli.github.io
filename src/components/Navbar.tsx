@@ -1,10 +1,14 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'preact/hooks'
+import { TargetedEvent } from 'preact'
 import { Menu } from 'lucide-preact'
 import { ThemeSwitcher } from './ThemeSwitcher'
 
-export function Navbar() {
+interface NavbarProps {
+    onOpenSkills: () => void
+}
+
+export function Navbar({ onOpenSkills }: NavbarProps) {
     const [scrolled, setScrolled] = useState(false)
-    const detailsRef = useRef<HTMLDetailsElement>(null)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -24,26 +28,13 @@ export function Navbar() {
 
     // Smooth scroll function
     const handleSmoothScroll = (
-        e: React.MouseEvent<HTMLAnchorElement>,
+        e: TargetedEvent<HTMLAnchorElement>,
         targetId: string
     ) => {
         e.preventDefault()
         const targetSection = document.getElementById(targetId)
         if (targetSection) {
             targetSection.scrollIntoView({ behavior: 'smooth' })
-        }
-    }
-
-    // Smooth scroll & close dropdown function
-    const handleSmoothScrollAndCloseDropdown = (
-        e: React.MouseEvent<HTMLAnchorElement>,
-        targetId: string
-    ) => {
-        handleSmoothScroll(e, targetId)
-
-        // Close dropdown
-        if (detailsRef.current) {
-            detailsRef.current.open = false
         }
     }
 
@@ -78,22 +69,12 @@ export function Navbar() {
                             <a
                                 className="text-lg"
                                 href="#expertise"
-                                onClick={(e) =>
-                                    handleSmoothScroll(e, 'expertise')
-                                }
+                                onClick={(e) => {
+                                    e.preventDefault()
+                                    onOpenSkills()
+                                }}
                             >
-                                Expertise
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                className="text-lg"
-                                href="#projects"
-                                onClick={(e) =>
-                                    handleSmoothScroll(e, 'projects')
-                                }
-                            >
-                                Projects
+                                Skills
                             </a>
                         </li>
                         <li>
@@ -115,6 +96,8 @@ export function Navbar() {
                     <img
                         src="/svg/Anifyuli.svg"
                         alt="Logo"
+                        width={184}
+                        height={47}
                         className="h-8 w-auto px-1"
                     />
                 </a>
@@ -132,37 +115,15 @@ export function Navbar() {
                         </a>
                     </li>
                     <li>
-                        <details ref={detailsRef}>
-                            <summary tabIndex={0}>Skills</summary>
-                            <ul className="rounded-lg bg-base-100">
-                                <li>
-                                    <a
-                                        href="#expertise"
-                                        onClick={(e) =>
-                                            handleSmoothScrollAndCloseDropdown(
-                                                e,
-                                                'expertise'
-                                            )
-                                        }
-                                    >
-                                        Expertise
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#projects"
-                                        onClick={(e) =>
-                                            handleSmoothScrollAndCloseDropdown(
-                                                e,
-                                                'projects'
-                                            )
-                                        }
-                                    >
-                                        Projects
-                                    </a>
-                                </li>
-                            </ul>
-                        </details>
+                        <a
+                            href="#expertise"
+                            onClick={(e) => {
+                                e.preventDefault()
+                                onOpenSkills()
+                            }}
+                        >
+                            Skills
+                        </a>
                     </li>
                     <li>
                         <a

@@ -1,10 +1,11 @@
 import { SimpleIcon } from 'simple-icons'
 import { BrandIcon } from './BrandIcon'
+import type { ReactNode } from 'preact/compat'
 
 interface ProjectCardProps {
     icon: SimpleIcon
     projectName: string
-    projectDetail: React.ReactNode
+    projectDetail: ReactNode
     projectLink?: string
 }
 

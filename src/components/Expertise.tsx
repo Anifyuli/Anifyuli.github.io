@@ -18,10 +18,9 @@ export function Expertise() {
 
     const techItems = [
         { icon: siDaisyui, color: '#1AD1A5', tooltip: 'daisyUI' },
-        { icon: siExpo, color: '#1C2024', tooltip: 'Expo' },
+        { icon: siExpo, color: 'var(--base-content)', tooltip: 'Expo' },
         { icon: siNestjs, color: '#E0234E', tooltip: 'NestJS' },
         { icon: siReact, color: '#61DAFB', tooltip: 'React' },
-        { icon: siReact, color: '#28292C', tooltip: 'React Native' },
         { icon: siTailwindcss, color: '#06B6D4', tooltip: 'TailwindCSS' },
         { icon: siVite, color: '#646CFF', tooltip: 'Vite' },
     ]

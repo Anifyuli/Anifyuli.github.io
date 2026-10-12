@@ -3,6 +3,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes overlay-zoom-in {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes overlay-zoom-out {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+}
+
+.overlay-zoom-in {
+    animation: overlay-zoom-in 0.28s ease-out both;
+}
+
+.overlay-zoom-out {
+    animation: overlay-zoom-out 0.2s ease-in both;
+}
+
 @layer base {
     h1 {
         @apply text-3xl;
@@ -22,4 +52,9 @@
     h6 {
         @apply text-sm;
     }
+}
+
+.no-drag {
+    -webkit-user-drag: none;
+    user-select: none;
 }
