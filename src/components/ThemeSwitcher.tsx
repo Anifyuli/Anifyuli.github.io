@@ -1,45 +1,47 @@
-import { Moon, Sun } from 'lucide-preact'
+import { Moon, Sun, SunMoon } from 'lucide-preact'
 import { useState, useEffect } from 'preact/hooks'
-import { TargetedEvent } from 'preact'
+
+const THEMES = ['auto', 'light', 'dark'] as const
+type Theme = (typeof THEMES)[number]
 
 export function ThemeSwitcher() {
-    // Initialize theme from localStorage or system preference
-    const [theme, setTheme] = useState<string>(() => {
-        const storedTheme = localStorage.getItem('theme')
-        if (storedTheme) return storedTheme
-        const systemPrefersDark = window.matchMedia(
-            '(prefers-color-scheme: dark)'
-        ).matches
-        return systemPrefersDark ? 'dark' : 'light'
+    const [theme, setTheme] = useState<Theme>(() => {
+        const stored = localStorage.getItem('theme')
+        return stored === 'light' || stored === 'dark' ? stored : 'auto'
     })
 
-    // Toggle theme between dark and light
-    const handleToggle = (e: TargetedEvent<HTMLInputElement>) => {
-        const newTheme = e.currentTarget.checked ? 'dark' : 'light'
-        setTheme(newTheme)
-    }
-
-    // Save theme to localStorage and apply to HTML element
     useEffect(() => {
+        const mq = window.matchMedia('(prefers-color-scheme: dark)')
+        const apply = () => {
+            const resolved =
+                theme === 'auto' ? (mq.matches ? 'dark' : 'light') : theme
+            document.documentElement.setAttribute('data-theme', resolved)
+        }
+        apply()
         localStorage.setItem('theme', theme)
-        document.documentElement.setAttribute('data-theme', theme)
+        mq.addEventListener('change', apply)
+        return () => mq.removeEventListener('change', apply)
     }, [theme])
+
+    const cycle = () => {
+        const idx = THEMES.indexOf(theme)
+        setTheme(THEMES[(idx + 1) % THEMES.length])
+    }
 
     return (
         <div className="flex-none">
-            <button className="btn btn-square btn-ghost">
-                <label className="swap swap-rotate h-12 w-12">
-                    <input
-                        type="checkbox"
-                        onChange={handleToggle}
-                        checked={theme === 'dark'}
-                        data-toggle-theme="dark,light"
-                        data-act-class="ACTIVECLASS"
-                        aria-label="Toggle Theme"
-                    />
-                    <Sun className="swap-on h-5 w-5" />
-                    <Moon className="swap-off h-5 w-5" />
-                </label>
+            <button
+                className="btn btn-square btn-ghost"
+                onClick={cycle}
+                aria-label="Ganti tema"
+            >
+                {theme === 'auto' ? (
+                    <SunMoon className="h-5 w-5" />
+                ) : theme === 'dark' ? (
+                    <Moon className="h-5 w-5" />
+                ) : (
+                    <Sun className="h-5 w-5" />
+                )}
             </button>
         </div>
     )

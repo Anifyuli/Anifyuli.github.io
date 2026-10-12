@@ -27,35 +27,25 @@
   </head>
   <script>
     (function () {
-      const systemTheme = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches
-        ? "dark"
-        : "light";
-      const currentTheme = localStorage.getItem("theme") || systemTheme;
+      var mq = window.matchMedia("(prefers-color-scheme: dark)");
 
-      document.documentElement.setAttribute("data-theme", currentTheme);
+      function apply() {
+        var stored = localStorage.getItem("theme") || "auto";
+        var theme =
+          stored === "auto" ? (mq.matches ? "dark" : "light") : stored;
+        document.documentElement.setAttribute("data-theme", theme);
 
-      const favicon = document.getElementById("favicon");
-      if (favicon) {
-        favicon.setAttribute(
-          "href",
-          currentTheme === "dark" ? "/svg/favicon-d.svg" : "/svg/favicon-l.svg"
-        );
+        var favicon = document.getElementById("favicon");
+        if (favicon) {
+          favicon.setAttribute(
+            "href",
+            theme === "dark" ? "/svg/favicon-d.svg" : "/svg/favicon-l.svg"
+          );
+        }
       }
 
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", (e) => {
-          const newTheme = e.matches ? "dark" : "light";
-          document.documentElement.setAttribute("data-theme", newTheme);
-          if (favicon) {
-            favicon.setAttribute(
-              "href",
-              newTheme === "dark" ? "/svg/favicon-d.svg" : "/svg/favicon-l.svg"
-            );
-          }
-        });
+      apply();
+      mq.addEventListener("change", apply);
     })();
   </script>
 
