@@ -7,14 +7,14 @@ import { Contact } from '@/components/Contact'
 
 function App() {
     return (
-        <div className="w-full overflow-x-hidden overflow-y-visible">
+        <main className="w-full overflow-x-hidden overflow-y-visible">
             <Navbar />
             <Hero />
             <About />
             <Skill />
             <Contact />
             <Footer />
-        </div>
+        </main>
     )
 }
 

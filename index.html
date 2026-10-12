@@ -9,46 +9,47 @@
       href="/svg/favicon-l.svg"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Moh. Anif Yuliansyah — self-taught programmer, Linux enthusiast, and FLOSS advocate."
+    />
+    <meta name="theme-color" content="#282828" />
+    <link rel="preload" as="image" href="/img/ava.webp" fetchpriority="high" />
     <link rel="stylesheet" href="./src/assets/style/custom.css" />
     <title>Welcome to my porto</title>
   </head>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const userTheme = localStorage.getItem("theme");
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
+    (function () {
+      const systemTheme = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches
         ? "dark"
         : "light";
-      const currentTheme = userTheme || systemTheme;
+      const currentTheme = localStorage.getItem("theme") || systemTheme;
 
-      // Update favicon
+      document.documentElement.setAttribute("data-theme", currentTheme);
+
       const favicon = document.getElementById("favicon");
       if (favicon) {
-        const href =
-          currentTheme === "dark" ? "/svg/favicon-d.svg" : "/svg/favicon-l.svg";
-        favicon.setAttribute("href", `${href}?cache-bust=${Date.now()}`);
-        console.log("Updated favicon to:", href);
+        favicon.setAttribute(
+          "href",
+          currentTheme === "dark" ? "/svg/favicon-d.svg" : "/svg/favicon-l.svg"
+        );
       }
 
-      // Update theme attribute on <html>
-      document.documentElement.setAttribute("data-theme", currentTheme);
-      console.log("Current theme:", currentTheme);
-
-      // Optional: Listen for system theme changes
       window
         .matchMedia("(prefers-color-scheme: dark)")
         .addEventListener("change", (e) => {
           const newTheme = e.matches ? "dark" : "light";
-          if (favicon) {
-            const href =
-              newTheme === "dark" ? "/svg/favicon-d.svg" : "/svg/favicon-l.svg";
-            favicon.setAttribute("href", `${href}?cache-bust=${Date.now()}`);
-            console.log("Updated favicon to:", href);
-          }
           document.documentElement.setAttribute("data-theme", newTheme);
-          console.log("Theme changed to:", newTheme);
+          if (favicon) {
+            favicon.setAttribute(
+              "href",
+              newTheme === "dark" ? "/svg/favicon-d.svg" : "/svg/favicon-l.svg"
+            );
+          }
         });
-    });
+    })();
   </script>
 
   <body>

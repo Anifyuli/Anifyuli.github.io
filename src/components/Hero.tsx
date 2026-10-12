@@ -1,7 +1,6 @@
 import { useCallback } from 'react'
 import { Code } from 'lucide-preact'
 import { siGithub, siLinux, siOpensourceinitiative } from 'simple-icons'
-import Avatar from '@/assets/img/ava.jpg'
 import MyCv from '/docs/my-cv.pdf'
 import { Download } from 'lucide-preact'
 import { IconTextComponent } from '@/components/ui/IconTextComponent'
@@ -45,8 +44,11 @@ export function Hero() {
                 <div className="hero-content mx-auto w-full max-w-6xl flex-col items-center justify-between gap-8 lg:flex-row">
                     <div className="flex w-full justify-center lg:w-2/5">
                         <img
-                            src={Avatar}
+                            src="/img/ava.webp"
                             alt="Avatar"
+                            width={768}
+                            height={768}
+                            fetchpriority="high"
                             className="w-3/4 max-w-sm rounded-full shadow-2xl sm:w-2/3 md:w-1/2 lg:w-full"
                         />
                     </div>
@@ -67,16 +69,18 @@ export function Hero() {
                         </div>
 
                         <div className="flex w-full justify-center gap-3 pt-6 lg:justify-center">
-                            <a
+                            <button
+                                type="button"
                                 className="btn btn-primary flex items-center gap-2"
                                 onClick={downloadCvAction}
                             >
                                 <Download /> Download CV
-                            </a>
+                            </button>
                             <a
                                 className="btn btn-primary flex items-center gap-2"
                                 href="https://github.com/Anifyuli"
-                                target="blank"
+                                target="_blank"
+                                rel="noopener noreferrer"
                             >
                                 View on{' '}
                                 <BrandIcon

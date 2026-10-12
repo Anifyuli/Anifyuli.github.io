@@ -19,7 +19,7 @@ export function ProjectCard({
             <div className="flex h-full max-w-xs flex-col rounded-lg p-4 shadow-md transition-shadow hover:shadow-lg">
                 <div className="mb-3 flex flex-row items-center space-x-4">
                     <BrandIcon icon={icon} className="h-12 w-12 rounded-sm" />
-                    <h4 className="text-xl font-medium">{projectName}</h4>
+                    <h3 className="text-xl font-medium">{projectName}</h3>
                 </div>
                 <div className="w-full flex-grow">
                     <p className="break-words text-base leading-relaxed">

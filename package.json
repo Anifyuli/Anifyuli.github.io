@@ -14,6 +14,9 @@
         "preact": "^10.28.1",
         "simple-icons": "^16.3.0"
     },
+    "pnpm": {
+        "onlyBuiltDependencies": ["esbuild"]
+    },
     "devDependencies": {
         "@eslint/js": "^9.39.2",
         "@preact/preset-vite": "^2.10.2",
